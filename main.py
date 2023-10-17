@@ -1,7 +1,7 @@
 import yaml
 from vns import variable_neighborhood_search
-import plot_utils
-from helpers import schwefel
+import utils.plot_utils as plot_utils
+from utils.helpers import schwefel
 
 
 def main(config):
