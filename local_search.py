@@ -10,14 +10,12 @@ def local_search(
     max_itr,
     convergence_threshold,
     dimension,
-    x_initial=None,
 ):
     x_range = [neighborhood for i in range(dimension)]
 
-    if x_initial is None:
-        x_initial = [
-            random.uniform(x_range[i][0], x_range[i][1]) for i in range(len(x_range))
-        ]
+    x_initial = [
+        random.uniform(x_range[i][0], x_range[i][1]) for i in range(len(x_range))
+    ]
 
     x_current = x_initial
     cost_current = cost_function(x_current)
