@@ -7,9 +7,9 @@ from helpers import bound_solution_in_x_range
 def local_search(
     neighborhood,
     cost_function,
-    max_itr=500,
-    convergence_threshold=0.01,
-    dimension=4,
+    max_itr,
+    convergence_threshold,
+    dimension,
     x_initial=None,
 ):
     x_range = [neighborhood for i in range(dimension)]
