@@ -32,8 +32,8 @@ def local_search(
         if cost_neighbor < cost_current:
             x_current = x_neighbor
             cost_current = cost_neighbor
-            if (cost_current < convergence_threshold) or (itr >= max_itr):
-                convergence = True
+        if (cost_current < convergence_threshold) or (itr >= max_itr):
+            convergence = True
 
         x_history.append(x_current)
         cost_history.append(cost_current)

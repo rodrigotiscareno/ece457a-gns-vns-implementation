@@ -5,5 +5,5 @@ vns:
   x_range: [-500, 500]
   neighborhoods: 5
   local_search_maximum_iterations: 500
-  vns_maximum_neighborhood_iterations: 20
+  vns_maximum_neighborhood_iterations: 40
   convergence_threshold: 0.01

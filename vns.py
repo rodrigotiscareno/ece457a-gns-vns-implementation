@@ -24,14 +24,13 @@ def variable_neighborhood_search(
     cost_history = []
 
     best_solution = sys.maxsize
+    best_x = []
     converged = False
     neighborhood_index = 0
     iterations = 0
 
     while not converged:
-        if (neighborhood_index + 1) > neighborhoods:
-            neighborhood_index = 0
-
+        print()
         iterations += 1
 
         current_neighborhood = defined_neighborhoods[neighborhood_index]
@@ -52,8 +51,8 @@ def variable_neighborhood_search(
 
         if current_solution < best_solution:
             best_solution = current_solution
-            if neighborhood_index != 0:
-                neighborhood_index -= 1
+            best_x = current_x
+            neighborhood_index = 0
         else:
             neighborhood_index += 1
 
@@ -63,4 +62,7 @@ def variable_neighborhood_search(
         ):
             converged = True
 
-    return current_x, current_solution, x_history, cost_history
+        if (neighborhood_index + 1) > neighborhoods:
+            neighborhood_index = 0
+
+    return best_x, best_solution, x_history, cost_history
