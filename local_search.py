@@ -1,24 +1,18 @@
 import numpy as np
 import random
-from helpers import bound_solution_in_x_range, schwefel
 
-# import matplotlib.pyplot as plt
-
-
-CONSTANTS = dict(
-    max_iterations=1000, convergence_threshold=0.01, dimension=2, x_initial=None
-)
+from helpers import bound_solution_in_x_range
 
 
 def local_search(
-    cost_function=schwefel,
+    neighborhood,
+    cost_function,
     max_itr=500,
     convergence_threshold=0.01,
     dimension=4,
-    neighborhoods=2,
     x_initial=None,
 ):
-    x_range = [[-500, 500] for i in range(dimension)]
+    x_range = [neighborhood for i in range(dimension)]
 
     if x_initial is None:
         x_initial = [
@@ -53,6 +47,3 @@ def local_search(
     best_cost = cost_history[best_cost_index]
 
     return best_x, best_cost, x_history, cost_history
-
-
-print(local_search())
