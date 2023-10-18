@@ -1,17 +1,17 @@
-search_algorithm: vns # Options: vns, gns
+search_algorithm: gns # Options: vns, gns
 dimension: 2
 
 vns:
   x_range: [-500, 500]
-  neighborhoods: 5
-  local_search_maximum_iterations: 500
-  vns_maximum_neighborhood_iterations: 40
+  neighborhoods: 6
+  local_search_maximum_iterations: 50
+  vns_maximum_neighborhood_iterations: 50
   convergence_threshold: 0.01
 
 gns:
   x_range: [-500, 500]
-  regions: 10
-  local_search_maximum_iterations: 20
-  vns_maximum_neighborhood_iterations: 20
-  vns_neighborhoods: 3
+  regions: 7
+  local_search_maximum_iterations: 50
+  vns_maximum_neighborhood_iterations: 50
+  vns_neighborhoods: 5
   convergence_threshold: 0.01

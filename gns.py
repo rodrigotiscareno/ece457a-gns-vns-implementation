@@ -13,7 +13,6 @@ def generalized_neighborhood_search(
 ):
     absolute = abs(x_range[0] - x_range[1])
     splits = absolute / regions
-    print(absolute)
 
     defined_regions = [
         [x_range[0] + splits * i, x_range[0] + splits * (i + 1)] for i in range(regions)
@@ -25,7 +24,6 @@ def generalized_neighborhood_search(
     best_x = []
 
     for region in defined_regions:
-        print(region)
         (
             current_x,
             current_solution,

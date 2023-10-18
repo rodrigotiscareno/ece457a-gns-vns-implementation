@@ -63,5 +63,4 @@ def variable_neighborhood_search(
 
         if (neighborhood_index + 1) > neighborhoods:
             neighborhood_index = 0
-
     return best_x, best_solution, x_history, cost_history
