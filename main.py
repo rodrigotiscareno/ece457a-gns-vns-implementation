@@ -1,5 +1,6 @@
 import yaml
 from vns import variable_neighborhood_search
+from gns import generalized_neighborhood_search
 import utils.plot_utils as plot_utils
 from utils.helpers import schwefel
 
@@ -14,6 +15,22 @@ def main(config):
             config["vns"]["local_search_maximum_iterations"],
             config["vns"]["vns_maximum_neighborhood_iterations"],
             config["vns"]["convergence_threshold"],
+        )
+
+    if config["search_algorithm"] == "gns":
+        (
+            best_x,
+            best_cost,
+            x_history,
+            cost_history,
+        ) = generalized_neighborhood_search(
+            config["dimension"],
+            config["gns"]["x_range"],
+            config["gns"]["regions"],
+            config["gns"]["local_search_maximum_iterations"],
+            config["gns"]["vns_maximum_neighborhood_iterations"],
+            config["gns"]["vns_neighborhoods"],
+            config["gns"]["convergence_threshold"],
         )
 
     if len(best_x) == 2:

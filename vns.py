@@ -12,8 +12,9 @@ def variable_neighborhood_search(
     vns_maximum_neighborhood_iterations,
     convergence_threshold,
 ):
-    absolute = abs(x_range[0]) + abs(x_range[1])
+    absolute = abs(x_range[0] - x_range[1])
     splits = absolute / neighborhoods
+    print(absolute)
 
     defined_neighborhoods = [
         [x_range[0] + splits * i, x_range[0] + splits * (i + 1)]
@@ -22,15 +23,14 @@ def variable_neighborhood_search(
 
     x_history = []
     cost_history = []
-
     best_solution = sys.maxsize
     best_x = []
+
     converged = False
     neighborhood_index = 0
     iterations = 0
 
     while not converged:
-        print()
         iterations += 1
 
         current_neighborhood = defined_neighborhoods[neighborhood_index]
