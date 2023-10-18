@@ -14,7 +14,6 @@ def variable_neighborhood_search(
 ):
     absolute = abs(x_range[0] - x_range[1])
     splits = absolute / neighborhoods
-    print(absolute)
 
     defined_neighborhoods = [
         [x_range[0] + splits * i, x_range[0] + splits * (i + 1)]
