@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-from utils.helpers import bound_solution_in_x_range
+from helpers import bound_solution_in_x_range
 
 
 def local_search(

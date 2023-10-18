@@ -1,7 +1,7 @@
 import sys
 
-from utils.local_search import local_search
-from utils.helpers import schwefel
+from local_search import local_search
+from helpers import schwefel
 
 
 def variable_neighborhood_search(

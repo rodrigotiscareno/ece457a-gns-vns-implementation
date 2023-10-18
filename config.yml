@@ -1,4 +1,4 @@
-search_algorithm: gns # Options: vns, gns
+search_algorithm: vns # Options: vns, gns
 dimension: 2
 
 vns:

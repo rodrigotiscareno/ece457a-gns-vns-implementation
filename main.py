@@ -1,8 +1,8 @@
 import yaml
 from vns import variable_neighborhood_search
 from gns import generalized_neighborhood_search
-import utils.plot_utils as plot_utils
-from utils.helpers import schwefel
+import plot_utils as plot_utils
+from helpers import schwefel
 
 
 def main(config):
